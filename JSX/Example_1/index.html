@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React</title>
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <!-- Include Babel.js to transcompile JSX Code -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <!-- Include React and ReactDOM -->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <script type="text/babel">
+            //pure react or javascript code
+            
+            //get container div
+            let container = document.getElementById("container");
+
+            //Component
+            class Share extends React.Component{
+                render(){
+                    return(
+                        // Static PROPS
+                        // <div>
+                        //     <a href="http://www.dailywebtuition.com" target="_blank" title="Mysite">
+                        //         Visit Website
+                        //     </a>
+                        // </div>
+
+                        // Dynamic PROPS
+                        // <div>
+                        //     <a href={this.props.url} target="_blank" title={this.props.label}>
+                        //         Visit Website
+                        //     </a>
+                        // </div>
+
+                        // Dynamic PROPS with SPREAD OPERATOR
+                        <div>
+                            <a {...this.props}>
+                                Visit {this.props.label}
+                            </a>
+                        </div>
+                    );
+                }
+            }
+
+            let address = "http://www.dailywebtuition.com";
+            let label = "MySite";
+
+            // spread operator (...)
+
+            //Render UI Static
+            // ReactDOM.render(<Share />,container);
+            //Render UI Dynamic
+            // ReactDOM.render(<Share url={address} label={label} />,container);
+            //Render UI spread operator
+            ReactDOM.render(<Share href={address} label={label} id='mylink' class='redirect' />,container);
+        </script>
+    </body>
+</html>
