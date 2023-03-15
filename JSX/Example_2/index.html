@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React</title>
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <!-- Include Babel.js to transcompile JSX Code -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <!-- Include React and ReactDOM -->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <script type="text/babel">
+            //pure react or javascript code
+            
+            //get container div
+            let container = document.getElementById("container");
+
+            class Logic extends React.Component {
+                getText(){
+                    return "Get From The Method";
+                }
+                render(){
+                    return(
+                        <div>
+                            {
+                            // this is single line comment
+                            /* this is 
+                            multiline 
+                            comment */
+                            }
+                            <a href={this.props.url}
+                            // called Method
+                            >{this.getText()}</a>
+                        </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(<Logic url="https://id.reactjs.org" />, container);
+        </script>
+    </body>
+</html>
