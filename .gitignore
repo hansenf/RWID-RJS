@@ -2,5 +2,7 @@ be/node_modules
 be/.env
 fe/node_modules
 fe/.env
-ecommerce
+ecommerce/node_modules
 routing/node_modules
+checkout
+React-invoice
