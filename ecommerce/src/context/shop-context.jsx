@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { PRODUCTS } from "../products.js";
 
 export const ShopContext = createContext(null);
