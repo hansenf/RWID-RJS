@@ -5,4 +5,5 @@ fe/.env
 ecommerce/node_modules
 routing/node_modules
 checkout
+portfolio/node_modules
 React-invoice
